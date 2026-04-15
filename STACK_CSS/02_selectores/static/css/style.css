@@ -1,0 +1,48 @@
+/* Seleccion a traves de etiquetas */
+h1 {
+    color: darkolivegreen
+}
+
+/* Seleccion a traves de clases (.)*/
+.rojo {
+    color: red
+}
+
+/* Seleccion a traves de id (#) */
+#amarillo {
+    color: yellow
+}
+
+/*---- Sitio de ejemplo ---- */
+h1 {
+    color: royalblue;
+}
+
+
+p {
+    text-align: right;
+}
+
+.is-centered {
+    text-align: center;
+    /* centrar texto */
+}
+
+
+.is-orange {
+    color: darkorange;
+}
+
+#container {
+    width: 200px;/* Ancho */
+    height: 200px;/* Altura */
+    padding: 10px;/* Espacio interno */
+}
+
+#avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;/* Agrega al elemento esquinas redondeadas */
+    margin-top: 20px; /* Margen superior (espacio externo) */
+    margin-left: 25px; /* Margen izquierdo  */
+}

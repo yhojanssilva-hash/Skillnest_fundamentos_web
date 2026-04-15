@@ -1,0 +1,71 @@
+* {
+    outline: 2x dashed red;
+    /* Linea externa de 2px */
+    margin: 0;
+    /* Formatea espacios externos de elementos html */
+    padding: 0;
+    /* Formatea espacios internos de elementos html */
+    box-sizing: border-box;
+    /* Considera los bordes dentro de tamaño de elementos html */
+}
+
+h1 {
+    color: rebeccapurple;
+}
+
+.green {
+    color: mediumseagreen;
+}
+
+#red {
+    color: tomato;
+}
+
+.quote p {
+    color: darkslategray;
+    font-style: italic;
+}
+
+.header>img {
+    height: 50px;
+}
+
+#container p {
+    font-size: 20px;
+    background-color: #444;
+    color: white;
+}
+
+#container p.highlight {
+    font-weight: bold;
+    color: gold;
+}
+form{
+    padding:20px;
+}
+input[type="text"] {
+    border: 2px solid royalblue;
+    padding:3px;
+}
+
+input[type="submit"] {
+    color: white;
+    background-color: mediumvioletred;
+    border: none;/* Quita los bordes por defecto */
+    padding:5px 20px;
+    cursor: pointer; /* Manito para realizar click*/
+}
+
+.color_nombre{
+color:darkblue
+}
+.color_rgb{
+    color:rgb(140, 177, 209)
+
+}
+
+
+.color_hex{
+    color:#c3e731;
+background-color: chartreuse;
+}
