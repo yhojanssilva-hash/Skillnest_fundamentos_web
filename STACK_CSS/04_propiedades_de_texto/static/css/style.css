@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 40px;
+    outline: solid 1px purple;
+}
+
+
+.container {
+    padding: 20px;
+}
+
+.textoIzquierda {
+    text-align: center;
+    /* Alineado a la izquierda */
+}
+
+.textoCentro {
+    text-align: right;
+    /* Alineado al centro */
+}
+
+.textoDerecha {
+    text-align: right;
+    /* Alineado a la derecha */
+}
+
+h1 {
+    font-weight: bold;
+    /* Negrita */
+}
+
+h2 {
+    font-weight: 300;
+    /* Fuente más delgada */
+}
