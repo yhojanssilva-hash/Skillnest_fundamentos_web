@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /*outline: solid 1px red;*/
 }
 
 .encabezado {
@@ -42,8 +43,63 @@
 .link {
     font-size: 300%;
 }
-.cursiva{
+
+.cursiva {
     color: blue;
     margin-top: 15px;
     font-style: italic;
+}
+
+/*
+Manejo del contenido con overflow: hidden, scroll, auto
+*/
+
+.caja {
+    width: 200px;
+    height: 100px;
+    display: inline-block;
+    ;
+}
+
+.example1 {
+    height: 100px;
+    width: 300px;
+    background-color: blue;
+    overflow: hidden;
+}
+
+
+.example2 {
+    height: 100px;
+    width: 300px;
+    background-color: green;
+    overflow: scroll;
+}
+
+
+.example3 {
+    height: 100px;
+    width: 300px;
+    background-color: blueviolet;
+    overflow: auto;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.scroll {
+    overflow: scroll;
+}
+
+.auto {
+    overflow: auto;
+}
+
+/*fondos y colores*/
+.banner {
+    height: 500px;
+    width: 100%;
+    background: red url("/STACK_CSS/06_tomanos/static/images/willy.jpg") no-repeat fixed center center;
+    background-size: 120%;
 }
