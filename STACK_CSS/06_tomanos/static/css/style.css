@@ -23,7 +23,9 @@
     width: 900px;
     padding: 20px;
 }
-
+.row{
+    padding: 20px;
+}
 .aceptar {
     width: 100px;
     height: 50px;
@@ -102,4 +104,66 @@ Manejo del contenido con overflow: hidden, scroll, auto
     width: 100%;
     background: red url("/STACK_CSS/06_tomanos/static/images/willy.jpg") no-repeat fixed center center;
     background-size: 120%;
+}
+
+
+.cancelar{
+    border: 2px dotted rgb(rgb(255, 0, 0), green, blue); /* dotted: linea segmentada.....*/
+    display: inline-block;
+    padding: 15 px;
+
+}
+.articulo{
+    border: 2px solid red; /* solid: linea solida */
+    height: 50px;
+    width: 100px;
+    display: inline-block;
+}
+.boton_redondeado{
+    border-radius: 15px; /* redondea esquinas */
+    padding: 10px 40px;
+    border-radius: 15px;
+
+}
+.caja_redondeada{
+    border-radius: 50%; /* 50% de radius: Circulo perfecto */
+    width: 40px;
+    height: 40px;
+    padding: 10px 16px;
+    background-color: blue;
+    font-weight: bold;
+    color:white;
+    border-radius: 50%;
+}
+.cajitas{
+width: 150px;
+height: 70px;
+outline: solid 1px blue;
+}
+.box1{
+    background-color: azure;
+    padding: 10px;
+}
+.box2{
+    background-color: aqua;
+    padding-top: 10px; /* Espacio interno: arriba*/
+    padding-right: 5px; /* Espacio interno: derecha*/
+    padding-bottom: 0px; /*Espacio interno: interno*/
+    padding-left: 5px; /* Espacio interno: izquierda*/
+    /* padding: 0px 5px 0px 5px--> aplicando en todos lados /*
+    /* padding: 0px 5px--> 0px del eje (Y) y 5px del eje (X */
+}
+.box3{
+    background-color: brown;
+    margin: 10px;
+}
+.box4{
+    background-color: chocolate;
+    margin: 0px 100px;
+    padding: 10 0px ;
+}
+.box5{
+    background-color: darkcyan;
+    float: left;
+    
 }
