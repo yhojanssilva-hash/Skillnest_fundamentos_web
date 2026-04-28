@@ -1,0 +1,47 @@
+* {
+    text-align: center;
+}
+
+body {
+    background-color: beige;
+    
+}
+.row{
+    text-align: center;
+    padding: 10px;
+}
+
+.buscar {
+    height: 35px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 20px;
+    border: rgb(34, 29, 27) solid 2px;
+}
+
+.caja_redondeada {
+    border-radius: 50%;
+    
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 153, 0, 0.932);
+    font-weight: bold;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-size:large;
+    border: rgba(255, 153, 0, 0.932);
+}
+
+.cuenta {
+    width: 110px;
+    height: 40px;
+    background-color: rgb(44, 44, 223);
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0) ;
+    color:white
+ 
+}
