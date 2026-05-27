@@ -1,0 +1,219 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+/* border: 1px red solid;*/
+    font-family:Verdana, sans-serif;
+}
+
+body {
+    background-image: url('/STACK_CSS/20_posiciones_css/static/images/pinki.jpg');
+    color: rgba(232, 54, 255, 0.755);
+    /*altura exageraqda para mostrar el efecto de scroll*/
+    min-height: 150vh;
+    padding-bottom: 50px;
+}
+
+/*posicion fija (fixed)*/
+.barra-navegación {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 15px 30px;
+    color: rgb(255, 136, 249);
+    background-color: rgb(0, 0, 0);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /*posiciona la barra por encima de otros elementos*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.838); /*agrega una sombra para mejorar la visibilidad*/
+}
+
+.barra-navegación h1 {
+    font-size: 1.2rem;
+}
+
+.enlace-nav {
+    text-decoration: none;
+    color: rgb(255, 136, 249);
+    font-weight: bold;
+    transition: color 0.3s ease; /*agrega una transición suave para el cambio de color*/
+}
+
+.enlace-nav:hover {
+    color: rgb(255, 0, 140);
+}
+
+/*contenedor principal*/
+.contenedor-principal {
+    display: flex;
+    flex: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 100px; /*espacio para evitar que el contenido quede oculto detrás de la barra de navegación*/
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    gap: 15px;
+    color: rgb(95, 0, 90);
+    background-image: url('/STACK_CSS/20_posiciones_css/static/images/fluter.jfif');
+    border-radius: 10px;
+    box-shadow: 0 5px 15px black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /*agrega una transición suave para el efecto de hover*/
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px); /*eleva la tarjeta al hacer hover*/
+    box-shadow: 0 15px 25px black; /*aumenta la sombra para resaltar el efecto de hover*/
+}
+.tarjeta h2 {
+    font-size: 1.3rem;
+    color:rgb(253, 37, 170);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.755);
+    padding-bottom: 10px;
+}
+
+.explicación{
+    font-size: 0.9rem;
+    color: rgb(78, 0, 59);
+    line-height: 1.4; /*interlineado para mejorar la legibilidad*/
+}
+
+/*cajas rosita*/
+
+.bloque-normal{
+    background-color: rgb(255, 116, 192);
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/*ejemplo de static (el que obedece)*/
+
+.bloque-estático{
+    position: static; /*valor por defecto, el elemento se posiciona según el flujo normal del documento*/
+    background-color: rgb(247, 97, 179);
+    padding: 12px;
+    text-align: center;
+    top: 40px; /*no tendrá efecto porque el elemento está en posición estática*/
+    left: 40px;/*no tendrá efecto porque el elemento está en posición estática*/
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid rgb(255, 0, 140);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   /* border: 1px red solid;*/
+    font-family:Verdana, sans-serif;
+}
+
+body {
+    background-image: url('/STACK_CSS/20_posiciones_css/static/images/pinki.jpg');
+    color: rgba(232, 54, 255, 0.755);
+    /*altura exageraqda para mostrar el efecto de scroll*/
+    min-height: 150vh;
+    padding-bottom: 50px;
+}
+
+/*posicion fija (fixed)*/
+.barra-navegación {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 15px 30px;
+    color: rgb(255, 136, 249);
+    background-color: rgb(0, 0, 0);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /*posiciona la barra por encima de otros elementos*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.838); /*agrega una sombra para mejorar la visibilidad*/
+}
+
+.barra-navegación h1 {
+    font-size: 1.2rem;
+}
+
+.enlace-nav {
+    text-decoration: none;
+    color: rgb(255, 136, 249);
+    font-weight: bold;
+    transition: color 0.3s ease; /*agrega una transición suave para el cambio de color*/
+}
+
+.enlace-nav:hover {
+    color: rgb(255, 0, 140);
+}
+
+/*contenedor principal*/
+.contenedor-principal {
+    display: flex;
+    flex: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 100px; /*espacio para evitar que el contenido quede oculto detrás de la barra de navegación*/
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    gap: 15px;
+    color: rgb(95, 0, 90);
+    background-image: url('/STACK_CSS/20_posiciones_css/static/images/fluter.jfif');
+    border-radius: 10px;
+    box-shadow: 0 5px 15px black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /*agrega una transición suave para el efecto de hover*/
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px); /*eleva la tarjeta al hacer hover*/
+    box-shadow: 0 15px 25px black; /*aumenta la sombra para resaltar el efecto de hover*/
+}
+.tarjeta h2 {
+    font-size: 1.3rem;
+    color:rgb(253, 37, 170);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.755);
+    padding-bottom: 10px;
+}
+
+.explicación{
+    font-size: 0.9rem;
+    color: rgb(78, 0, 59);
+    line-height: 1.4; /*interlineado para mejorar la legibilidad*/
+}
+
+/*cajas rosita*/
+
+.bloque-normal{
+    background-color: rgb(83, 41, 64);
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/*ejemplo de static (el que obedece)*/
+
+.bloque-estático{
+    position: static; /*valor por defecto, el elemento se posiciona según el flujo normal del documento*/
+    background-color: rgb(90, 4, 51);
+    padding: 12px;
+    text-align: center;
+    top: 40px; /*no tendrá efecto porque el elemento está en posición estática*/
+    left: 40px;/*no tendrá efecto porque el elemento está en posición estática*/
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid rgb(36, 1, 20);
+}
