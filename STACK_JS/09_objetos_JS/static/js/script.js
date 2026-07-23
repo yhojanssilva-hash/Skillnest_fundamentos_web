@@ -43,3 +43,4 @@ let hamburguesaEspecial = {
 //Acceder al pan
 
 console.log(hamburguesaEspecial.pan); 
+hamburguesaEspecial.mostrarIngredientes();
