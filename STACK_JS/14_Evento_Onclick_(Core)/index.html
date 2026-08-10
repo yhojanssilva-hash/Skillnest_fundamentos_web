@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Blog</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+    <nav>
+        <h1>Social Blog</h1>
+        <input type="text" placeholder="Buscar publicaciones...">
+        <button class="botontone" onclick="cambiarLogin(this)">Iniciar sesión</button>
+    </nav>
+
+    <div class="container">
+        <main>
+            <div class="card1">
+                <h2>Fundamentos de JavaScript</h2>
+                <p><strong>Publicado por:</strong> Carlos Pérez</p>
+                <p><strong>Fecha:</strong> 02/03/2025</p>
+                <p>JavaScript es un lenguaje de programación para el desarrollo web. Aprende los conceptos
+                basicos para comenzar a programar
+                </p>
+                <button class="botontone1" onclick="darLike(this)">12 Me gusta</button>
+            </div>
+
+            <div class="card2">
+                <h2>Aprende a diseñar con CSS</h2>
+                <p><strong>Publicado por:</strong> Ana Gómez</p>
+                <p><strong>Fecha:</strong> 01/03/2025</p>
+                <p>El diseño web es una parte fundamental en el desarrollo de aplicaciones web. Conoce las propiedades
+                    de CSS para crear interfaces atractivas
+                </p>
+                <button class="botontone2" onclick="darLike(this)">30 Me gusta</button>
+            </div>
+        </main>
+
+        <aside>
+            <div class="card3">
+                <h3>¡Bienvenido!</h3>
+                <p>Explora publicaciones y conecta con usuarios.</p>
+                <button class="perfiles" onclick="verPerfil()">Ver perfil</button>
+            </div>
+        </aside>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>

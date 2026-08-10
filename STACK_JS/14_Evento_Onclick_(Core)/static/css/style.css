@@ -1,0 +1,81 @@
+body {
+    font-family: sans-serif;
+    background: #f0f2f7;
+    margin: 0;
+}
+
+nav {
+    background: #a491ff;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav input {
+    padding: 8px 10px;
+    border-radius: 15px;
+    border: none;
+    width: 750px;   
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+main {
+    flex: 2;
+}
+
+aside {
+    flex: 1;
+}
+
+.card1, .card2, .card3 {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.card3 {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.botontone {
+    background: #5d48ca;
+    border-radius: 15px;
+    margin-right: 25px;
+    padding: 8px 18px;
+}
+
+.botontone1 {
+    background: #ff7575;
+}
+
+.botontone2 {
+    background: #ff7575;
+}
+
+.perfiles {
+    background: #00d3c6;
+}
