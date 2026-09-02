@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Like</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <h1>Social Like</h1>
+    </nav>
+
+    <div class="container">
+        <aside class="profile-card">
+            <img src="static/images/images (1).jpg" alt="Avatar de Misato" class="avatar">
+            <h2>Misato</h2>
+            <button class="btn-profile">Mi perfil</button>
+        </aside>
+
+        <main class="caja">
+            <h2>Últimas publicaciones</h2>
+
+            <div class="post">
+                <div class="post-header">
+                    <h3>Rei</h3>
+                    <div class="laik-container">
+                        <span id="like-count-1">0</span> like(s)
+                        <button onclick="aumentarLike('#like-count-1')">Like</button>
+                    </div>
+                </div>
+                <p>Acabo de configurar este nuevo <a href="#">bot de Discord</a>, cuéntame qué opinan ustedes.</p>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <h3>Asuka</h3>
+                    <div class="laik-container">
+                        <span id="like-count-2">0</span> like(s)
+                        <button onclick="aumentarLike('#like-count-2')">Like</button>
+                    </div>
+                </div>
+                <p>Acabo de leer este <a href="#">nuevo comic</a>. Denle un vistazo.</p>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <h3>Shinji</h3>
+                    <div class="laik-container">
+                        <span id="like-count-3">0</span> like(s)
+                        <button onclick="aumentarLike('#like-count-3')">Like</button>
+                    </div>
+                </div>
+                <p>No puedo dejar de escuchar este <a href="#">album</a>. ¿A quién más le gusta?</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
