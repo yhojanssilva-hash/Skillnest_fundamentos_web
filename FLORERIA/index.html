@@ -99,3 +99,97 @@
     <script src="static/js/script.js"></script>
 </body>
 </html>
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>FlorManía - Tienda de Flores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===================================================
+         HEADER: Encabezado superior de la página
+         - class="header-principal": Para darle el fondo rosado y alineación.
+         - id="envia-flores": ID ÚNICO para detectar el evento hover en JS.
+         - id="btn-login": ID ÚNICO para la alerta de bienvenida en JS.
+         =================================================== -->
+    <header class="header-principal">
+        <div class="logo">FlorManía</div>
+        <nav class="nav-superior">
+            <a href="#" id="envia-flores">Envía Flores</a>
+            <a href="#">Nosotros</a>
+            <button id="btn-login" class="btn-secundario">Iniciar Sesión</button>
+        </nav>
+    </header>
+
+    <!-- ===================================================
+         BARRA DE CATEGORÍAS: Menú secundario horizontal
+         =================================================== -->
+    <nav class="nav-categorias">
+        <ul>
+            <li><a href="#">Girasoles</a></li>
+            <li><a href="#">Rosas</a></li>
+            <li><a href="#">Claveles</a></li>
+            <li><a href="#">Orquídeas</a></li>
+            <li><a href="#">Margaritas</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===================================================
+         MAIN: Contenido central del sitio web
+         =================================================== -->
+    <main>
+        <section class="flor-del-mes">
+            <h1>Flor del Mes</h1>
+            <div class="banner-imagen">[ Imagen Principal Flor del Mes ]</div>
+        </section>
+
+        <section class="catalogo">
+            <div class="barra-info">
+                <span>Mostrando 50 resultados</span>
+                <a href="#" class="enlace-mas">Ver más Flores</a>
+            </div>
+
+            <!-- ===================================================
+                 GRID DE PRODUCTOS:
+                 Nota la clase REPETIDA "btn-comprar" en cada botón.
+                 JS usará querySelectorAll(".btn-comprar") para afectarlos a todos.
+                 =================================================== -->
+            <div class="productos-grid">
+
+                <div class="tarjeta-producto">
+                    <div class="box-imagen">[ Imagen Ramo de Rosas ]</div>
+                    <div class="info-producto">
+                        <p class="nombre">Ramo de Rosas</p>
+                        <p class="precio">$40.00</p>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <div class="box-imagen">[ Imagen Arreglo Tulipanes ]</div>
+                    <div class="info-producto">
+                        <p class="nombre">Arreglo Tulipanes</p>
+                        <p class="precio">$50.00</p>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <div class="box-imagen">[ Imagen Bouquet Lirios ]</div>
+                    <div class="info-producto">
+                        <p class="nombre">Bouquet Lirios</p>
+                        <p class="precio">$25.00</p>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Importante: Cargar siempre la hoja de JS al final antes de cerrar el body -->
+    <script src="script.js"></script>
+</body>
+</html>
