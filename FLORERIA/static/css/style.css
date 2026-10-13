@@ -31,9 +31,12 @@ body {
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 40px;
     font-weight: bold;
     color: #ffffff;
+}
+.logo2 {
+    color: #000000; /* Color naranja del prototipo */
 }
 
 /* ===================================================
