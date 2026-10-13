@@ -1,57 +1,49 @@
-// ===================================================
-// document.addEventListener("DOMContentLoaded", ...)
-// APUNTE: Le dice al navegador "NO ejecutes JavaScript hasta que todo el HTML
-// haya cargado visualmente". Evita errores de "elemento no encontrado".
-// ===================================================
 document.addEventListener("DOMContentLoaded", () => {
 
     // ===================================================
-    // REQUERIMIENTO 1: HOVER "Envía Flores" -> "Envía Bouquets"
-    // APUNTES:
-    // 1. document.getElementById("envia-flores"): Captura el elemento con ese ID.
-    // 2. mouseenter: Evento cuando el cursor ENTRA al elemento.
-    // 3. mouseleave: Evento cuando el cursor SALE del elemento.
-    // 4. textContent: Propiedad para cambiar el texto visible dentro de una etiqueta.
+    // REQUERIMIENTO 1: Click en categorías cambia de color
+    // NOTA DE LA MAQUETA: "Al hacer click en las categorías, el botón debe cambiar de color"
     // ===================================================
-    const enlaceEnviaFlores = document.getElementById("envia-flores");
+    const botonesCategoria = document.querySelectorAll(".btn-categoria");
 
-    if (enlaceEnviaFlores) {
-        enlaceEnviaFlores.addEventListener("mouseenter", () => {
-            enlaceEnviaFlores.textContent = "Envía Bouquets";
-        });
-
-        enlaceEnviaFlores.addEventListener("mouseleave", () => {
-            enlaceEnviaFlores.textContent = "Envía Flores";
-        });
-    }
-
-    // ===================================================
-    // REQUERIMIENTO 2: DESAPARECER BOTÓN COMPRAR
-    // APUNTES:
-    // 1. document.querySelectorAll(".btn-comprar"): Selecciona TODOS los botones con esa clase y crea una lista.
-    // 2. .forEach((boton) => { ... }): Un ciclo/bucle que recorre cada botón individual de la lista.
-    // 3. evento.target: Hace referencia EXACTA únicamente al botón que el usuario acaba de presionar.
-    // 4. style.display = "none": Oculta visualmente el elemento (como si lo borrara de la pantalla).
-    // ===================================================
-    const botonesComprar = document.querySelectorAll(".btn-comprar");
-
-    botonesComprar.forEach((boton) => {
+    botonesCategoria.forEach((boton) => {
         boton.addEventListener("click", (evento) => {
-            evento.target.style.display = "none";
+            // Asignamos el color de fondo púrpura al botón clickeado
+            evento.target.style.backgroundColor = "#a04070";
+            evento.target.style.color = "#ffffff";
         });
     });
 
-    // ===================================================
-    // REQUERIMIENTO 3: ALERTA "Iniciar Sesión"
-    // APUNTES:
-    // 1. click: Evento al hacer click.
-    // 2. alert("..."): Función nativa para sacar la ventana flotante de aviso con mensaje.
-    // ===================================================
-    const btnLogin = document.getElementById("btn-login");
 
-    if (btnLogin) {
-        btnLogin.addEventListener("click", () => {
-            alert("Bienvenido a la tienda de flores");
+    // ===================================================
+    // REQUERIMIENTO 2: Incrementar Likes al hacer click
+    // APUNTE: Capturamos el <span> interno del botón clickeado,
+    // leemos su valor numérico, le sumamos 1 e imprimimos el nuevo total.
+    // ===================================================
+    const botonesLike = document.querySelectorAll(".btn-like");
+
+    botonesLike.forEach((boton) => {
+        boton.addEventListener("click", () => {
+            // Buscamos el elemento span con la clase .cant-likes dentro del botón
+            const spanCantidad = boton.querySelector(".cant-likes");
+            if (spanCantidad) {
+                let contador = parseInt(spanCantidad.textContent);
+                contador++;
+                spanCantidad.textContent = contador;
+            }
+        });
+    });
+
+
+    // ===================================================
+    // REQUERIMIENTO 3: Alerta en "Cerrar Sesión"
+    // NOTA DE LA MAQUETA: "Al hacer click en Cerrar Sesión, debe mostrarse una alerta con 'Sesión cerrada correctamente'"
+    // ===================================================
+    const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");
+
+    if (btnCerrarSesion) {
+        btnCerrarSesion.addEventListener("click", () => {
+            alert("Sesión cerrada correctamente");
         });
     }
 

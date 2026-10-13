@@ -1,9 +1,4 @@
-/* ===================================================
-   APUNTES CSS: REGLA GENERAL
-   * { box-sizing: border-box; margin: 0; padding: 0; }
-   - margin: 0 / padding: 0 -> Elimina los espacios blancos indeseados que los navegadores ponen por defecto.
-   - box-sizing: border-box -> Garantiza que si agregas padding o borde, el tamaño real del cuadro NO se altere ni se rompa.
-   =================================================== */
+/* Reset Básico global */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,131 +6,141 @@
 }
 
 body {
-    font-family: Arial, sans-serif; /* Define el tipo de letra limpio de la página */
-    background-color: #ffffff;      /* Fondo blanco */
-}
-
-/* ===================================================
-   HEADER & FLEXBOX
-   - display: flex -> Activa la alineación FLEXIBILE (pone elementos lado a lado en fila).
-   - justify-content: space-between -> Empuja el primer hijo (logo) a la izquierda y el último (menú) a la derecha.
-   - align-items: center -> Centra verticalmente el logo y los botones para que queden a la misma altura.
-   - padding: 15px 30px -> 15px de espacio arriba/abajo y 30px a los lados (relleno interno).
-   =================================================== */
-.header-principal {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f3c1d9; /* Color de fondo rosado del prototipo */
-    padding: 15px 30px;
-}
-
-.logo {
-    font-size: 40px;
-    font-weight: bold;
-    color: #ffffff;
-}
-.logo2 {
-    color: #000000; /* Color naranja del prototipo */
-}
-
-/* ===================================================
-   GAP Y ENLACES
-   - gap: 20px -> Crea una separación exacta de 20px entre cada botón o enlace interno.
-   - text-decoration: none -> Quita la línea fea de subrayado de los enlaces <a>.
-   - cursor: pointer -> Cambia la flecha del mouse a una MANITA al pasar por encima.
-   =================================================== */
-.nav-superior {
-    display: flex;
-    align-items: center;
-    gap: 20px; 
-}
-
-.nav-superior a {
-    text-decoration: none;
-    color: #000000;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.btn-secundario {
+    font-family: Arial, sans-serif;
     background-color: #ffffff;
-    border: 2px solid #000000;
-    padding: 6px 14px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 4px; /* Bordes suavemente redondeados */
 }
 
-/* ===================================================
-   CATEGORÍAS Y LISTAS (UL / LI)
-   - list-style: none -> Le quita los "puntos negros" (bullets) a las listas de HTML.
-   - justify-content: center -> Alinea todo el contenido de la fila justo al CENTRO de la pantalla.
-   =================================================== */
-.nav-categorias {
-    background-color: #e0e0e0;
-    padding: 10px 0;
-}
-
-.nav-categorias ul {
+/* Layout de 2 columnas principales */
+.contenedor-app {
     display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 25px;
+    min-height: 100vh;
 }
 
-.nav-categorias a {
+/* Sidebar lateral */
+.sidebar {
+    width: 220px;
+    background-color: #ffffff;
+    border-right: 1px solid #cccccc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo h2 {
+    font-size: 24px;
+    color: #000000;
+}
+
+.logo span {
+    color: #a04070;
+}
+
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.menu-lateral a {
     text-decoration: none;
     color: #333333;
     font-weight: bold;
 }
 
-/* ===================================================
-   BANNER Y MÁRGENES AUTOMÁTICOS
-   - margin: 15px auto -> El 'auto' en los lados centra automáticamente el cuadro en la pantalla.
-   - text-align: center -> Centra los textos de títulos dentro del bloque.
-   =================================================== */
-.flor-del-mes {
-    text-align: center;
-    margin: 30px 0;
-}
-
-.banner-imagen {
-    width: 80%;
-    height: 180px;
-    margin: 15px auto;
-    border: 2px solid #000000;
+.acciones-sidebar {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    padding-bottom: 20px;
 }
 
-/* ===================================================
-   TARJETAS Y BOTÓN COMPRAR
-   - float: right -> Empuja un botón hacia la esquina derecha de su tarjeta contenedor.
-   - :hover -> Aplica el cambio de color solo cuando el mouse se posiciona encima.
-   =================================================== */
-.barra-info {
-    width: 80%;
-    margin: 0 auto 15px auto;
+.btn-config, .btn-cerrar {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-config {
+    background-color: #e0d0d8;
+}
+
+.btn-cerrar {
+    background-color: #702048;
+    color: #ffffff;
+}
+
+.copy {
+    font-size: 11px;
+    color: #777777;
+    text-align: center;
+}
+
+/* Área de contenido principal */
+.contenido-principal {
+    flex: 1;
+    background-color: #ffffff;
+}
+
+.header-superior {
+    background-color: #bc7893;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.productos-grid {
+.input-buscar {
+    padding: 6px 12px;
+    border-radius: 15px;
+    border: 1px solid #cccccc;
+}
+
+.hero {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.hero h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Botones de categorías */
+.categorias {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-categoria {
+    background-color: #e0d0d8;
+    border: 1px solid #000000;
+    padding: 8px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Tarjetas y Likes */
+.galeria-grid {
     display: flex;
     justify-content: center;
     gap: 20px;
+    padding: 20px;
 }
 
-.tarjeta-producto {
-    background-color: #f0f0f0;
-    padding: 15px;
-    width: 220px;
-    border: 1px solid #ccc;
+.tarjeta-gato {
+    width: 150px;
+    text-align: center;
 }
 
-.box-imagen {
+.box-foto {
+    width: 100%;
     height: 120px;
     border: 2px solid #000000;
     display: flex;
@@ -144,16 +149,11 @@ body {
     margin-bottom: 10px;
 }
 
-.btn-comprar {
-    background-color: #c07da0;
-    color: white;
-    border: 1px solid #000;
-    padding: 5px 12px;
+.btn-like {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    padding: 5px 15px;
+    border-radius: 15px;
     cursor: pointer;
-    float: right;
     font-weight: bold;
-}
-
-.btn-comprar:hover {
-    background-color: #a05d80;
 }

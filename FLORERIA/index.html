@@ -2,93 +2,100 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>FlorManía - Tienda de Flores</title>
+    <title>MiauLove - Comunidad de Gatitos</title>
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 
-    <!-- ===================================================
-         HEADER: Encabezado superior de la página
-         - class="header-principal": Para darle el fondo rosado y alineación.
-         - id="envia-flores": ID ÚNICO para detectar el evento hover en JS.
-         - id="btn-login": ID ÚNICO para la alerta de bienvenida en JS.
-         =================================================== -->
-    <header class="header-principal">
-        <div class="logo">Flor<span class="logo2">Manía</span></div>
-        <nav class="nav-superior">
-            <a href="#" id="envia-flores">Envía Flores</a>
-            <a href="#">Nosotros</a>
-            <button id="btn-login" class="btn-secundario">Iniciar Sesión</button>
-        </nav>
-    </header>
+    <!-- Contenedor principal para dividir en 2 columnas con Flexbox -->
+    <div class="contenedor-app">
 
-    <!-- ===================================================
-         BARRA DE CATEGORÍAS: Menú secundario horizontal
-         =================================================== -->
-    <nav class="nav-categorias">
-        <ul>
-            <li><a href="#">Girasoles</a></li>
-            <li><a href="#">Rosas</a></li>
-            <li><a href="#">Claveles</a></li>
-            <li><a href="#">Orquídeas</a></li>
-            <li><a href="#">Margaritas</a></li>
-        </ul>
-    </nav>
-
-    <!-- ===================================================
-         MAIN: Contenido central del sitio web
-         =================================================== -->
-    <main>
-        <section class="flor-del-mes">
-            <h1>Flor del Mes</h1>
-            <div class="banner-imagen">[ Imagen Principal Flor del Mes ]</div>
-        </section>
-
-        <section class="catalogo">
-            <div class="barra-info">
-                <span>Mostrando 50 resultados</span>
-                <a href="#" class="enlace-mas">Ver más Flores</a>
+        <!-- ===================================================
+             SIDEBAR LATERAL IZQUIERDA
+             =================================================== -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>miau<span>love</span></h2>
+                <p class="icono-logo">🐾</p>
             </div>
 
-            <!-- ===================================================
-                 GRID DE PRODUCTOS:
-                 Nota la clase REPETIDA "btn-comprar" en cada botón.
-                 JS usará querySelectorAll(".btn-comprar") para afectarlos a todos.
-                 =================================================== -->
-            <div class="productos-grid">
+            <nav class="menu-lateral">
+                <a href="#" class="item-menu">Inicio</a>
+                <a href="#" class="item-menu">Subir Imagen</a>
+                <a href="#" class="item-menu">Contacto</a>
+                <a href="#" class="item-menu">Favoritos</a>
+                <a href="#" class="item-menu">Recientes</a>
+            </nav>
 
-                <div class="tarjeta-producto">
-                    <div class="box-imagen">[ Imagen Ramo de Rosas ]</div>
-                    <div class="info-producto">
-                        <p class="nombre">Ramo de Rosas</p>
-                        <p class="precio">$40.00</p>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </div>
-
-                <div class="tarjeta-producto">
-                    <div class="box-imagen">[ Imagen Arreglo Tulipanes ]</div>
-                    <div class="info-producto">
-                        <p class="nombre">Arreglo Tulipanes</p>
-                        <p class="precio">$50.00</p>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </div>
-
-                <div class="tarjeta-producto">
-                    <div class="box-imagen">[ Imagen Bouquet Lirios ]</div>
-                    <div class="info-producto">
-                        <p class="nombre">Bouquet Lirios</p>
-                        <p class="precio">$25.00</p>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </div>
-
+            <div class="acciones-sidebar">
+                <button class="btn-config">Configuración</button>
+                <!-- REQUERIMIENTO 3: Botón con ID único para la alerta -->
+                <button id="btn-cerrar-sesion" class="btn-cerrar">Cerrar Sesión</button>
             </div>
-        </section>
-    </main>
 
-    <!-- Importante: Cargar siempre la hoja de JS al final antes de cerrar el body -->
+            <footer class="copy">
+                <p>Todos los derechos reservados miaulove ©</p>
+            </footer>
+        </aside>
+
+        <!-- ===================================================
+             CONTENIDO PRINCIPAL DERECHO
+             =================================================== -->
+        <main class="contenido-principal">
+
+            <header class="header-superior">
+                <span class="icon-menu">☰</span>
+                <input type="text" placeholder="Buscar" class="input-buscar">
+            </header>
+
+            <section class="hero">
+                <h1>¡Únete y comparte tu amor por los gatitos!</h1>
+
+                <!-- REQUERIMIENTO 1: Botones de categorías -->
+                <div class="categorias">
+                    <button class="btn-categoria">Gatitos</button>
+                    <button class="btn-categoria">Juveniles</button>
+                    <button class="btn-categoria">Adultos</button>
+                </div>
+            </section>
+
+            <!-- REQUERIMIENTO 2: Tarjetas de productos con Likes -->
+            <section class="galeria-grid">
+
+                <div class="tarjeta-gato">
+                    <div class="box-foto">[ Foto Gatito 1 ]</div>
+                    <button class="btn-like">
+                        💜 <span class="cant-likes">1</span>
+                    </button>
+                </div>
+
+                <div class="tarjeta-gato">
+                    <div class="box-foto">[ Foto Gatito 2 ]</div>
+                    <button class="btn-like">
+                        💜 <span class="cant-likes">2</span>
+                    </button>
+                </div>
+
+                <div class="tarjeta-gato">
+                    <div class="box-foto">[ Foto Gatito 3 ]</div>
+                    <button class="btn-like">
+                        💜 <span class="cant-likes">4</span>
+                    </button>
+                </div>
+
+                <div class="tarjeta-gato">
+                    <div class="box-foto">[ Foto Gatito 4 ]</div>
+                    <button class="btn-like">
+                        💜 <span class="cant-likes">6</span>
+                    </button>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
     <script src="static/js/script.js"></script>
 </body>
 </html>
