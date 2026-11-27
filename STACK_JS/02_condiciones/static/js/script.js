@@ -1,147 +1,170 @@
-//✅ Ejercicio 1: Sistema de descuento
-//📝 Enunciado
-//Una tienda realiza descuentos según el monto de compra:
-// Si la compra es mayor o igual a $50.000 → 20% descuento
-// Si la compra es mayor o igual a $30.000 → 10% descuento
-// Si la compra es menor a $30.000 → sin descuento
-// El programa debe solicitar:
-// Nombre del cliente
-// Monto de compra
-// Luego mostrar:
-// Descuento aplicado
-// Total a pagar
+// ✅ Ejercicio 1: Calculadora de Envío
+// 📝 Enunciado
+// Una empresa de despacho cobra el envío dependiendo del peso del paquete.
+// Solicitar: Nombre del cliente y Peso del paquete (kg)
+// Condiciones:
+// Hasta 2 kg
+// Más de 2 kg y hasta 5 kg
+// Más de 5 kg y hasta 10 kg
+// Más de 10 kg
+// Mostrar: Nombre del cliente, Categoría del envío y Valor correspondiente al despacho
 
 function ejercicio1() {
-    let nombreCliente = prompt("Ingrese su nombre:");
-    let montoCompra = parseInt(prompt("Ingrese el monto de su compra:"));
-    let descuento = 0;
-    if (montoCompra >= 50000) {
-        descuento = 0.20;
-        alert(`${nombreCliente} Has obtenido un descuento del 20%. el nuevo monto a pagar es: $${montoCompra * (1 - descuento)}`);
+    let nombreCliente = prompt("Ingrese el nombre del cliente:");
+    let peso = parseFloat(prompt("Ingrese el peso del paquete (en kg):"));
+
+    if (!nombreCliente || nombreCliente.trim() === "" || isNaN(peso) || peso <= 0) {
+        alert("⚠️ Error: Debe ingresar un nombre válido y un peso mayor a 0.");
+        return;
     }
-    else if (montoCompra >= 30000) {
-        descuento = 0.10;
-        alert(`${nombreCliente} Has obtenido un descuento del 10%. el nuevo monto a pagar es: $${montoCompra * (1 - descuento)}`);
+
+    let categoria = "";
+    let valor = 0;
+
+    if (peso <= 2) {
+        categoria = "Envío Ligero";
+        valor = 3000;
+    } else if (peso > 2 && peso <= 5) {
+        categoria = "Envío Estándar";
+        valor = 5500;
+    } else if (peso > 5 && peso <= 10) {
+        categoria = "Envío Pesado";
+        valor = 9000;
+    } else {
+        categoria = "Carga Especial";
+        valor = 15000;
     }
-    else {
-        alert(`${nombreCliente} No has obtenido ningún descuento. el monto a pagar es: $${montoCompra}`);
-    }
+
+    alert(`📦 Resumen de Envío\nCliente: ${nombreCliente}\nCategoría: ${categoria}\nValor a pagar: $${valor}`);
 }
 
-//✅ Ejercicio 2: Acceso a evento
-//📝 Enunciado
-//Una persona puede ingresar a un evento si:
-//Tiene 18 años o más
-//  O viene acompañada por un adulto
-// Solicitar:
-// Edad
-// Si viene acompañado (si o no)
-// Mostrar:    
-// “Acceso permitido”
-// o “Acceso denegado”
+// ✅ Ejercicio 2: Acceso a Biblioteca
+// 📝 Enunciado
+// Dos tipos de usuarios: Estudiante y Profesor
+// Solicitar: Tipo de usuario y Cantidad de libros solicitados
+// Condiciones: Cada tipo de usuario posee un límite distinto de préstamos.
+// Mostrar: Si el préstamo está permitido, si supera el límite y mensaje distinto según usuario.
 
 function ejercicio2() {
-    let edad = parseInt(prompt("Ingrese su edad:"));
-    let acompañado = prompt("¿Viene acompañado por un adulto? (si/no):").toLowerCase();
+    let tipoUsuario = prompt("Ingrese el tipo de usuario (estudiante / profesor):").toLowerCase().trim();
+    let cantidadLibros = parseInt(prompt("Ingrese la cantidad de libros solicitados:"));
 
-    if (edad >= 18 ) {
-        alert("Acceso permitido");
-    } 
-    else if (acompañado === "si") {
-        alert("Acceso permitido");
+    if ((tipoUsuario !== "estudiante" && tipoUsuario !== "profesor") || isNaN(cantidadLibros) || cantidadLibros <= 0) {
+        alert("⚠️ Error: Ingrese 'estudiante' o 'profesor' y una cantidad de libros válida.");
+        return;
     }
-    else {
-        alert("Acceso denegado");
+
+    // Límite Estudiante: máximo 3 libros | Límite Profesor: máximo 6 libros
+    if (tipoUsuario === "estudiante" && cantidadLibros <= 3) {
+        alert(`✅ Préstamo permitido (Estudiante). Puedes llevar tus ${cantidadLibros} libro(s) por 7 días.`);
+    } else if (tipoUsuario === "estudiante" && cantidadLibros > 3) {
+        alert(`❌ Préstamo denegado (Estudiante). Superaste el límite máximo de 3 libros.`);
+    } else if (tipoUsuario === "profesor" && cantidadLibros <= 6) {
+        alert(`✅ Préstamo permitido (Profesor). Puedes llevar tus ${cantidadLibros} libro(s) por 15 días.`);
+    } else {
+        alert(`❌ Préstamo denegado (Profesor). Superaste el límite máximo de 6 libros.`);
     }
 }
 
-// ✅ Ejercicio 3: Clasificación de temperatura
+// ✅ Ejercicio 3: Clasificación Deportiva
 // 📝 Enunciado
-// Solicitar una temperatura y clasificar:
-// Menor a 10 → “Hace frío”
-// Entre 10 y 24 → “Temperatura agradable”
-// 25 o más → “Hace calor”
-// Además:
-// Si la temperatura supera los 35 grados, mostrar una alerta adicional:
-//  “Temperatura extrema”.
+// Solicitar: Nombre del participante y Edad
+// Clasificar al participante según su edad (al menos 4 categorías).
+// Mostrar: Nombre, Edad y Categoría asignada
 
-function mostrarTemperatura() {
-    let temperatura = parseInt(prompt("Ingresa la temperatura actual"))
-    if (temperatura < 10 && temperatura <= -30){
-        mensaje = "Hace frio"
-    }else if (temperatura >= 10 && temperatura <= 24) {
-        mensaje = "Temperatura Agradable";
-    }else if (temperatura >= 25 && temperatura <= 50) {
-        mensaje = "Hace calor";
-    }else{
-        mensaje = "✖️ Ingresar valores validos!"
+function ejercicio3() {
+    let nombreParticipante = prompt("Ingrese el nombre del participante:");
+    let edad = parseInt(prompt("Ingrese la edad del participante:"));
+
+    if (!nombreParticipante || nombreParticipante.trim() === "" || isNaN(edad) || edad < 5 || edad > 100) {
+        alert("⚠️ Error: Ingrese un nombre válido y una edad entre 5 y 100 años.");
+        return;
     }
-    // Alerta principal
-    if (temperatura > 35 && temperatura < 50){
-        mensaje +=  "\n ¡Alerta!: Temperatura extrema";
+
+    let categoria = "";
+
+    if (edad >= 5 && edad <= 11) {
+        categoria = "Infantil 🧒";
+    } else if (edad >= 12 && edad <= 17) {
+        categoria = "Juvenil 🏃";
+    } else if (edad >= 18 && edad <= 39) {
+        categoria = "Adulto 🏅";
+    } else {
+        categoria = "Senior / Máster 🏆";
     }
-    alert(mensaje)
+
+    alert(`📋 Ficha Deportiva\nParticipante: ${nombreParticipante}\nEdad: ${edad} años\nCategoría asignada: ${categoria}`);
 }
-// ✅ Ejercicio 4: Verificación de administrador
+
+// ✅ Ejercicio 4: Sistema de Bonificación
 // 📝 Enunciado
-// Solicitar:
-// Nombre de usuario
-// Contraseña
-// Condiciones:
-// Usuario correcto: admin
-// Contraseña correcta: 12345
-// Casos:
-// Si ambos son correctos → “Bienvenido administrador”
-// Si usuario es correcto pero contraseña incorrecta → “Contraseña incorrecta”
-// Si usuario no existe → “Usuario no encontrado”
+// Solicitar: Nombre del trabajador y Años de servicio
+// Clasificar según rangos de antigüedad.
+// Mostrar: Nombre, Nivel de antigüedad y Mensaje indicando si recibe o no bonificación.
 
 function ejercicio4() {
-    let usuario = prompt("Ingrese su nombre de usuario:");
-    let contraseña = prompt("Ingrese su contraseña:");
+    let nombreTrabajador = prompt("Ingrese el nombre del trabajador:");
+    let aniosServicio = parseInt(prompt("Ingrese los años de servicio:"));
 
-    if (usuario === "admin" && contraseña === "12345") {
-        alert("Bienvenido administrador");
-    } else if (usuario === "admin") {
-        alert("Contraseña incorrecta");
-    } else {
-        alert("Usuario no encontrado");
+    if (!nombreTrabajador || nombreTrabajador.trim() === "" || isNaN(aniosServicio) || aniosServicio < 0) {
+        alert("⚠️ Error: Ingrese un nombre válido y años de servicio (0 o más).");
+        return;
     }
+
+    let nivelAntiguedad = "";
+    let mensajeBono = "";
+
+    if (aniosServicio < 1) {
+        nivelAntiguedad = "Nuevo Ingreso";
+        mensajeBono = "❌ No recibe bonificación (requiere mínimo 1 año).";
+    } else if (aniosServicio >= 1 && aniosServicio <= 3) {
+        nivelAntiguedad = "Junior";
+        mensajeBono = "✅ Recibe bonificación del 10%.";
+    } else if (aniosServicio >= 4 && aniosServicio <= 7) {
+        nivelAntiguedad = "Intermedio";
+        mensajeBono = "✅ Recibe bonificación del 20%.";
+    } else {
+        nivelAntiguedad = "Veterano";
+        mensajeBono = "🌟 Recibe bonificación máxima del 35%.";
+    }
+
+    alert(`💼 Sistema de Bonificación\nTrabajador: ${nombreTrabajador}\nNivel: ${nivelAntiguedad}\nEstado: ${mensajeBono}`);
 }
 
-// ✅ Ejercicio 5: Sistema de aprobación
+// ✅ Ejercicio 5: Evaluación de Velocidad
 // 📝 Enunciado
-// Solicitar:
-// Nombre del estudiante
-// Nota 1
-// Nota 2
-// Nota 3
-// Calcular promedio.
-// Condiciones:
-// Promedio 6.0 o superior → “Aprobado con excelencia”
-// Promedio entre 4.0 y 5.9 → “Aprobado”
-// Menor a 4.0 → “Reprobado”
-// Además:
-// Si alguna nota es menor a 2.0 mostrar:
-//  “Debe asistir a reforzamiento”.
+// Solicitar: Nombre del conductor y Velocidad registrada
+// Clasificar la velocidad en rangos y mostrar alerta adicional si supera el límite permitido.
+// Mostrar: Nombre del conductor, Velocidad y Clasificación obtenida
 
 function ejercicio5() {
-    let nombreEstudiante = prompt("Ingrese el nombre del estudiante:");
-    let nota1 = parseInt(prompt("Ingrese la nota 1:"));
-    let nota2 = parseInt(prompt("Ingrese la nota 2:"));
-    let nota3 = parseInt(prompt("Ingrese la nota 3:"));
-    let promedio = (nota1 + nota2 + nota3) / 3;
+    let nombreConductor = prompt("Ingrese el nombre del conductor:");
+    let velocidad = parseFloat(prompt("Ingrese la velocidad registrada (km/h):"));
 
-    if (promedio >= 6.0 && (nota1 < 2.0 || nota2 < 2.0 || nota3 < 2.0)) {
-        alert(`${nombreEstudiante} Aprobado con excelencia pero debe asistir a reforzamiento😉`);
-    } else if (promedio >= 6.0) {
-        alert(`¡${nombreEstudiante} Aprobado con excelencia!🤩`);
-    } else if (promedio >= 4.0 && (nota1 <= 2.0 || nota2 <= 2.0 || nota3 <= 2.0)) {
-        alert(`${nombreEstudiante} Aprobado pero debe asistir a reforzamiento😬`);
-    } 
-    else if (promedio >= 4.0) {
-        alert(`${nombreEstudiante} Aprobado🙂`);
+    if (!nombreConductor || nombreConductor.trim() === "" || isNaN(velocidad) || velocidad < 0) {
+        alert("⚠️ Error: Ingrese un nombre válido y una velocidad mayor o igual a 0.");
+        return;
     }
-    else {
-        alert(`${nombreEstudiante} Reprobado y debe asistir a reforzamiento😞`);
+
+    let clasificacion = "";
+    let mensaje = "";
+
+    if (velocidad < 40) {
+        clasificacion = "Velocidad Baja 🐢";
+    } else if (velocidad >= 40 && velocidad <= 80) {
+        clasificacion = "Velocidad Óptima 🚗";
+    } else if (velocidad > 80 && velocidad <= 100) {
+        clasificacion = "Velocidad Alta ⚠️";
+    } else {
+        clasificacion = "Exceso de Velocidad 🚨";
     }
+
+    mensaje = `🚓 Control de Velocidad\nConductor: ${nombreConductor}\nVelocidad: ${velocidad} km/h\nClasificación: ${clasificacion}`;
+
+    // Alerta adicional si supera el límite máximo permitido (100 km/h)
+    if (velocidad > 100) {
+        mensaje += `\n\n🛑 ¡ALERTA!: Ha excedido la velocidad permitida (máximo 100 km/h).`;
+    }
+
+    alert(mensaje);
 }
